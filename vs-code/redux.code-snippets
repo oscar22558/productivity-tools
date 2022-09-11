@@ -41,10 +41,10 @@
 			"\t}",
 			"}",
 			"",
-			"function* ${1:sagaName}(){",
+			"function* ${1:sagaName}Saga(){",
 			"\tyield takeEvery(${2:reducerAction}, tryTo${3:asyncFunction})",
 			"}",
-			"export default ${1:sagaName}"
+			"export default ${1:sagaName}Saga"
 		]
 	},
 	"New Redux Slice": {
