@@ -1,0 +1,28 @@
+{
+	"New Function Component with props": {
+		"prefix": ["react-fc-props-ts", "reactfcpropsts"],
+		"body": [
+			"import React from \"react\"",
+			"",
+			"type Props = {",
+			"\t",
+			"}",
+			"",
+			"const ${1:ComponentName}: React.FC<Props> = ({})=>{",
+			"\treturn (${2:content})",
+			"}",
+			"export default ${1:ComponentName}"
+		]
+	},
+	"New Function Component": {
+		"prefix": ["react-fc-ts", "reactfcts"],
+		"body": [
+			"import React from \"react\"",
+			"",
+			"const ${1:ComponentName} = ()=>{",
+			"\treturn (${2:content})",
+			"}",
+			"export default ${1:ComponentName}"
+		]
+	}
+}
