@@ -21,7 +21,7 @@
 			"import { AxiosError } from \"axios\"",
 			"",
 			"function* ${5:fetchFunction}(){",
-			"\tyield call(${6:ApiFunction})",
+			"\tyield call(${6:Api})",
 			"}",
 			"",
 			"function handleAxiosError(error: AxiosError){",
@@ -79,7 +79,7 @@
 			"\t\t${1:actionName}End: (state: State)=>{",
 			"\t\t\tstate.${2:stateColumn}.loading = true",
 			"\t\t},",
-			"\t\t${1:actionName}Success: (state: State${3:successPayload})=>{",
+			"\t\t${1:actionName}Success: (state: State${3:, successPayload})=>{",
 			"\t\t\t",
 			"\t\t},",
 			"\t\t${1:actionName}Fail: (state: State, {payload}: PayloadAction<${4:errorType}>)=>{",
@@ -110,11 +110,12 @@
 	"New Redux api": {
 		"prefix": ["redux-api", "rapi"],
 		"body": [
-			"const ${1:api} = ()=>${2:ApiRequest}({",
-			"\turl: ${3:url},",
-			"\tmethod: ${4:GET},",
+			"const ${1:api} = (${2:data: DataType})=>ApiRequest({",
+			"\turl: \"${3:url}\",",
+			"\tmethod: \"${4:GET}\",",
 			"\t${5:config},",
-			"})"
+			"})",
+			"${6:export default ${1:api}}"
 		]
 	}
 }

@@ -17,8 +17,6 @@
 	"New Function Component": {
 		"prefix": ["react-fc-ts", "reactfcts"],
 		"body": [
-			"import React from \"react\"",
-			"",
 			"const ${1:ComponentName} = ()=>{",
 			"\treturn (${2:content})",
 			"}",
