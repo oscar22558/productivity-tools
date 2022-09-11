@@ -79,10 +79,10 @@
 			"\t\t${1:actionName}End: (state: State)=>{",
 			"\t\t\tstate.${2:stateColumn}.loading = true",
 			"\t\t},",
-			"\t\t${1:actionName}Success: (state: State)=>{",
+			"\t\t${1:actionName}Success: (state: State${3:successPayload})=>{",
 			"\t\t\t",
 			"\t\t},",
-			"\t\t${1:actionName}Fail: (state: State, {payload}: PayloadAction<${3:errorType}>)=>{",
+			"\t\t${1:actionName}Fail: (state: State, {payload}: PayloadAction<${4:errorType}>)=>{",
 			"\t\t\tstate.${2:stateColumn}.error = payload",
 			"\t\t}",
 		]
@@ -106,5 +106,15 @@
 			"\tasync: createAction<${4:asyncPayloadType}>(\"${5:asyncActionName}\")",
 			"}",
 		] 
+	},
+	"New Redux api": {
+		"prefix": ["redux-api", "rapi"],
+		"body": [
+			"const ${1:api} = ()=>${2:ApiRequest}({",
+			"\turl: ${3:url},",
+			"\tmethod: ${4:GET},",
+			"\t${5:config},",
+			"})"
+		]
 	}
 }
