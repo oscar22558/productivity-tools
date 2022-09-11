@@ -1,0 +1,96 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Try-Catch Generator": {
+		"prefix": ["gentrycatch"],
+		"body": [
+			"function* ${1:fnName}(){",
+			"\ttry{",
+			"\t",
+			"\t} catch(ex: any){",
+			"\t",
+			"\t} finally {",
+			"\t",
+			"\t}",
+			"}"
+		]
+	},
+	"New Redux Saga": {
+		"prefix": ["redux-saga", "rsaga", "saga"],
+		"body": [
+			"import {put, call, takeEvery} from \"@redux-saga/core/effects\"",
+			"",
+			"import { AxiosError } from \"axios\"",
+			"",
+			"function* ${4:fetchFunction}(){",
+			"\tyield call(${5:ApiFunction})",
+			"}",
+			"",
+			"function handleAxiosError(error: AxiosError){",
+			"\t",
+			"}",
+			"",
+			"function* tryTo${3:asyncFunction}(){",
+			"\t",
+			"\tyield put(start())",
+			"\ttry{",
+			"\t\tyield call(${4:fetchFunfction})",
+			"\t} catch(ex: any){",
+			"\t\tconst errorMessage = handleAxiosError()",
+			"\t\tyield put(end(errorMessage))",
+			"\t} finally {",
+			"\t\tyield put(end())",
+			"\t}",
+			"}",
+			"",
+			"function* ${1:sagaName}(){",
+			"\tyield takeEvery(${2:reducerAction}, tryTo${3:asyncFunction})",
+			"}",
+			"export default ${1:sagaName}"
+		]
+	},
+	"New Redux Slice": {
+		"prefix": ["redux-slice", "rslice", "slice"],
+		"body": [
+			"import { createSlice, PayloadAction } from \"@reduxjs/toolkit\";",
+			"",
+			"type State = {",
+			"\t",
+			"}",
+			"",
+			"const initialState: State = {",
+			"\t",
+			"}",
+			"",
+			"const ${1:sliceName} = createSlice({",
+			"\tname: \"${2:reducerName}\",",
+			"\tinitialState,",
+			"\treducers: {",
+			"\t",
+			"\t},",
+			"})",
+			"export default ${1:sliceName}"
+		]
+	},
+	"New Redux Selector": {
+		"prefix": ["redux-selector", "rselector", "selector"],
+		"body": [
+			"const ${1:selectorName} = ({${2:reducerKey}}: RootState)=>${2:reducerKey}",
+			"export default ${1:selectorName}"
+		]
+	}
+}
