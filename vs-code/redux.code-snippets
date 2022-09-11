@@ -34,7 +34,7 @@
 			"\ttry{",
 			"\t\tyield call(${5:fetchFunfction})",
 			"\t} catch(ex: any){",
-			"\t\tconst errorMessage = handleAxiosError()",
+			"\t\tconst errorMessage = handleAxiosError(ex)",
 			"\t\tyield put(fail(errorMessage))",
 			"\t} finally {",
 			"\t\tyield put(end())",
